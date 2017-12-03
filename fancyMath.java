@@ -33,10 +33,10 @@ class MathFunc {
         // another break, there are functions where the zero can't be reached due to insufficient precision of double,
         // probably not sufficient for all kind of functions
         if( Math.abs(last_middle - middle) <= epsilon)
-        	return middle;      
+            return middle;      
         last_middle = middle;
         if( middle_y > 0.0 )
-         	upper_t = middle;
+             upper_t = middle;
         else if ( middle_y < 0.0)
             lower_t = middle;                 
                     
@@ -278,7 +278,7 @@ class PrimeTest {
                 else if( nmb < div)
                     lower_bound = middle;
                 else
-                	break;       
+                    break;       
                 
                 middle = lower_bound + (upper_bound - lower_bound) / 2;
             }
@@ -298,7 +298,7 @@ class PrimeTest {
         return is_prime;
     }
     
-    /*for e 1),	set save to true*/
+    /*for e 1),    set save to true*/
     /* method == 0 Trial division, method == 1 Trial division with primes Lookup Table, method == 2 Sieve Of Eratosthenes*/
     static long[] findPrimes(long till_nmb, int[] primes_found, boolean save, int method, int optimization) {
         long[] buff = null;
@@ -356,7 +356,7 @@ class PrimeTest {
         for(int i = 0; i < steps; i++) {
             till_nmb = (long)Math.pow(base, i);
             if( method == 2 )
-            	er_sieve = new SieveOfEratosthenes((int)till_nmb);
+                er_sieve = new SieveOfEratosthenes((int)till_nmb);
             t_beg = System.nanoTime();      
             if( method == 2 )
                er_sieve.sieve();
@@ -397,7 +397,7 @@ class SieveOfEratosthenes {
         for(int i = 2; i*i <= max; i++)
             if( sieve_field[i] )
                 for(int j = i * 2; j <= max; j += i)
-                	sieve_field[j] = false;
+                    sieve_field[j] = false;
         
     }
     
@@ -424,42 +424,42 @@ class SieveOfEratosthenes {
 public class fancyMath {
     
     public static void printLongArray(long[] array, int elems, int chars_per_line) {
-    	int cnt = 0;
+        int cnt = 0;
         int left = elems;
             for(long i = 0; i < elems/chars_per_line; i++) {
                 for(long j = 0; j < chars_per_line; j++, left--) 
                     if(left == 1) // last line
                         System.out.print(array[cnt++]);
                     else 
-                    	System.out.print(array[cnt++] + ", ");
+                        System.out.print(array[cnt++] + ", ");
                 System.out.println();        
             }
             while( left --> 0 ) {
-            	if(left == 0) // last line
+                if(left == 0) // last line
                     System.out.print(array[cnt++]);
                 else 
-                	System.out.print(array[cnt++] + ", ");
+                    System.out.print(array[cnt++] + ", ");
             }       
     }
     
     public static void printDoubleArray(double[] array, int elems, int chars_per_line) {
 
-    	
-    	int cnt = 0;
+        
+        int cnt = 0;
         int left = elems;
             for(long i = 0; i < elems/chars_per_line; i++) {
                 for(long j = 0; j < chars_per_line; j++, left--) 
                     if(left == 1) // last line
                         System.out.print(array[cnt++]);
                     else 
-                    	System.out.print(array[cnt++] + ", ");
+                        System.out.print(array[cnt++] + ", ");
                 System.out.println();        
             }
             while( left --> 0 ) {
-            	if(left == 0) // last line
+                if(left == 0) // last line
                     System.out.print(array[cnt++]);
                 else 
-                	System.out.print(array[cnt++] + ", ");
+                    System.out.print(array[cnt++] + ", ");
             }  
     }
     public static void main(String[] args) {
@@ -474,11 +474,11 @@ public class fancyMath {
         }
         
         try {
-			System.in.read();
-			System.in.read(); 
-		} catch (IOException e) {
+            System.in.read();
+            System.in.read(); 
+        } catch (IOException e) {
 
-		}
+        }
         } 
         /*b*/ boolean B = true;
         if(B) {
@@ -499,11 +499,11 @@ public class fancyMath {
         ob2.mults = 0; 
         ob2.calls = 0; 
         try {
-			System.in.read();
-			System.in.read();
-		} catch (IOException e) {
+            System.in.read();
+            System.in.read();
+        } catch (IOException e) {
 
-		}
+        }
         }
         
         /*c*/ boolean C = true;
@@ -512,11 +512,11 @@ public class fancyMath {
             fancyPrinter2 fnc = new fancyPrinter2();
             fnc.print(3); 
             try {
-    			System.in.read();
-    			System.in.read();
-    		} catch (IOException e) {
+                System.in.read();
+                System.in.read();
+            } catch (IOException e) {
 
-    		}
+            }
         }
         
    
@@ -532,11 +532,11 @@ public class fancyMath {
             printLongArray(buff, primes_cnt[0], chars_per_line);
             
             System.out.println();  try {
-    			System.in.read();
-    			System.in.read();
-    		} catch (IOException e) {
+                System.in.read();
+                System.in.read();
+            } catch (IOException e) {
 
-    		}
+            }
             
             /*e 2)*/     
             System.out.println("Laufzeitmessung der unoptimierten Probedivision, bei Obergrenze für Primzahlen von " + until + " mit Schrittweite " + stepsize + ", Zeit in Millisekunden: ");           
@@ -544,24 +544,24 @@ public class fancyMath {
             printDoubleArray(times, times.length, 2); 
             
             /* possible output max 10000, step 1000:
-  			0.1553151, 
-			0.1406001, 
-			0.2108051, 
-			0.3554401, 
-			0.5322582, 
-			0.7506107, 
-			1.003425, 
-			1.3396406, 
-			1.5913394, 
-			1.9539233
+              0.1553151, 
+            0.1406001, 
+            0.2108051, 
+            0.3554401, 
+            0.5322582, 
+            0.7506107, 
+            1.003425, 
+            1.3396406, 
+            1.5913394, 
+            1.9539233
              */
             
             try {
-    			System.in.read();
-    			System.in.read();
-    		} catch (IOException e) {
+                System.in.read();
+                System.in.read();
+            } catch (IOException e) {
 
-    		}
+            }
             
             
             /*e 4)*/            
@@ -573,29 +573,29 @@ public class fancyMath {
             
             /* possible output: 
             7.12E-5, 
-			2.38E-5, 
-			3.085E-4, 
-			2.38E-5, 
-			2.37E-5, 
-			7.12E-5, 
-			2.373E-4, 
-			6.883E-4, 
-			0.0022785, 
-			0.0080221, 
-			0.0277687, 
-			0.098591, 
-			0.3775364, 
-			1.3163813, 
-			4.8656551, 
-			17.9855835
+            2.38E-5, 
+            3.085E-4, 
+            2.38E-5, 
+            2.37E-5, 
+            7.12E-5, 
+            2.373E-4, 
+            6.883E-4, 
+            0.0022785, 
+            0.0080221, 
+            0.0277687, 
+            0.098591, 
+            0.3775364, 
+            1.3163813, 
+            4.8656551, 
+            17.9855835
              */
              
             try {
-    			System.in.read();
-    			System.in.read();
-    		} catch (IOException e) {
+                System.in.read();
+                System.in.read();
+            } catch (IOException e) {
 
-    		}
+            }
             
             /*f 2)*/
             
@@ -606,26 +606,26 @@ public class fancyMath {
             
             /* possible output with max 10000, step 1000:
             0.4279947, 
-			0.2462637, 
-			0.3797198, 
-			0.385867, 
-			0.3842294, 
-			0.4789279, 
-			0.5101143, 
-			0.3020385, 
-			0.350005, 
-			0.4792839
+            0.2462637, 
+            0.3797198, 
+            0.385867, 
+            0.3842294, 
+            0.4789279, 
+            0.5101143, 
+            0.3020385, 
+            0.350005, 
+            0.4792839
              */
             
             long[] new_primes = PrimeTest.findPrimes(1000000, primes_cnt, true, 1, 0);
             printLongArray(new_primes, primes_cnt[0], chars_per_line);
             
             try {
-    			System.in.read();
-    			System.in.read();
-    		} catch (IOException e) {
+                System.in.read();
+                System.in.read();
+            } catch (IOException e) {
 
-    		}
+            }
             
         }
         
@@ -640,28 +640,28 @@ public class fancyMath {
             er_sieve.print_fancy();
             
             try {
-    			System.in.read();
-    			System.in.read();
-    		} catch (IOException e) {
+                System.in.read();
+                System.in.read();
+            } catch (IOException e) {
 
-    		}
+            }
             
             System.out.println();
             System.out.println("Laufzeitmessung beim Sieb des Erathostenes, bei Primzahlen bis " + until + " mit Schrittweite " + stepsize + ", Zeit in Millisekunden: ");           
             double[] times = PrimeTest.timeForFindPrimes(until/stepsize, stepsize, 2); 
             printDoubleArray(times, times.length, 1); 
             /* possible output with 100000 max and 1000 step:
-              	0.0079746, 
-				8.307E-4, 
-				0.0013529, 
-				0.0017088, 
-				0.0023022, 
-				0.0027531, 
-				...
-				0.0334174, 
-				0.0242324, 
-				0.024446, 
-				0.0247546
+                  0.0079746, 
+                8.307E-4, 
+                0.0013529, 
+                0.0017088, 
+                0.0023022, 
+                0.0027531, 
+                ...
+                0.0334174, 
+                0.0242324, 
+                0.024446, 
+                0.0247546
              */
             
             
