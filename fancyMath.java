@@ -154,37 +154,21 @@ class MathPower {
 /*c, probably not a good solution*/
 class fancyPrinter2 {
     
-    fancyPrinter2() {
-        i = -1;    
-    }
+    fancyPrinter2() {}
 
-    int i;
-    
-    public void print(int x) {
-        
-        if( x < 2 && x > -2 )
+     public static void printPattern(int n){
+
+        if ( n==-1 )
             return;
-        
-        if( i == -1 )
-            i = x;
 
-        System.out.println("0\n11\n0");
-        int j = i - Math.abs(x) + 3;
-        int nmb = j - 1;
-        
-        while( j --> 0 )             
-            System.out.print(nmb); 
-    
+        printPattern( n-1 );
+
+        for( int i = 0; i <= n; i++ )
+            System.out.print( n );
+
         System.out.println();
-               
-        if( x == 2 )
-            x = -2;
-        
-        if( -x == i )
-            System.out.println("0\n11\n0");
-        else
-            print( x-1 );
- 
+
+        printPattern( n-1 );
     }
    
    
@@ -509,8 +493,7 @@ public class fancyMath {
         /*c*/ boolean C = true;
         if(C) {
             System.out.println("Fancy Printer2:");
-            fancyPrinter2 fnc = new fancyPrinter2();
-            fnc.print(3); 
+            fancyPrinter2.printPattern(3); 
             try {
                 System.in.read();
                 System.in.read();
